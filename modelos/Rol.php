@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CRUDPHP/modelos/Conexion.php';
+require_once 'Conexion.php';
 
 class Rol {
 	public $id;
@@ -28,22 +28,22 @@ class Rol {
 
 	public function ingresar () {
 		$s = "INSERT INTO roles (Nombre) VALUES ('$this->nombre')";
-		$resultado = $conexion->actualizar($s);
-		$conexion->cerrar();
+		$resultado = $this->conexion->actualizar($s);
+		$this->conexion->cerrar();
 		return $resultado;
 	}
 
 	public function eliminar () {
 		$s = "DELETE FROM roles WHERE Id = $this->id";
-		$resultado = $conexion->actualizar($s);
-		$conexion->cerrar();
+		$resultado = $this->conexion->actualizar($s);
+		$this->conexion->cerrar();
 		return $resultado;
 	}
 
 	public function editar () {
 		$s = "UPDATE roles SET Nombre = '$this->nombre' WHERE Id = $this->id";
-		$resultado = $conexion->actualizar($s);
-		$conexion->cerrar();
+		$resultado = $this->conexion->actualizar($s);
+		$this->conexion->cerrar();
 		return $resultado;
 	}
 }

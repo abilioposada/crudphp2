@@ -9,6 +9,10 @@
 	<title>Roles</title>
 </head>
 <body>
+	<header>
+		<h1>Roles</h1>
+		<h2>Editar</h2>
+	</header>
 	<form action="../../controladores/Roles.php" method="post">
 		<input type="hidden" name="id" value="<?= $_GET['id'] ?>" />
 		<input name="nombre" placeholder="Nombre" value="<?= $rol[1] ?>" required autofocus />
